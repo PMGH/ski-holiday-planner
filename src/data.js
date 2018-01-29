@@ -16,7 +16,7 @@ const data = [
     id: 2,
     firstName: 'Michael',
     secondName: 'McCready',
-    lead: true,
+    lead: false,
     sport: 'Ski',
     paid: true,
     flightId: 2,
@@ -29,7 +29,7 @@ const data = [
     id: 3,
     firstName: 'Michael',
     secondName: 'McCready',
-    lead: true,
+    lead: false,
     sport: 'Snowboard',
     paid: true,
     flightId: 3,
@@ -37,6 +37,32 @@ const data = [
     accomodationId: 3,
     liftPassId: 3,
     equipmentId: 3
+  },
+  {
+    id: 4,
+    firstName: 'Eleanor',
+    secondName: 'McCready',
+    lead: false,
+    sport: 'Ski',
+    paid: false,
+    flightId: 4,
+    transferId: 4,
+    accomodationId: 4,
+    liftPassId: 4,
+    equipmentId: 4
+  },
+  {
+    id: 5,
+    firstName: 'Maureen',
+    secondName: 'McCready',
+    lead: false,
+    sport: '',
+    paid: false,
+    flightId: 5,
+    transferId: 5,
+    accomodationId: 5,
+    liftPassId: 5,
+    equipmentId: 5
   }
 ]
 
