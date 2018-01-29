@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import PartyMemberList from './containers/PartyMemberList';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello World!</h1>
+      <section>
+        <PartyMemberList />
+      </section>
     );
   }
 }
