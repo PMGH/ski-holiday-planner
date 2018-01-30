@@ -1,4 +1,4 @@
-use 'ski-hol-planner';
+use ski_hol_planner;
 db.dropDatabase();
 
 var members = [
