@@ -50,7 +50,7 @@ router.get('/', function(req, res){
 router.get('/members', function(req, res){
   console.log('query: all party members');
   db.collection('members').find().toArray(function(err, results){
-    if (err){ return console.log('DB error') };
+    if (err){ return console.log('DB error - all members') };
     res.json(results);
   });
 });
@@ -59,7 +59,7 @@ router.get('/members/:name', function(req, res){
   var person = { $or: [ { firstName_lower: req.params.name.toLowerCase() }, { secondName_lower: req.params.name.toLowerCase() } ] };
   console.log('query: ', person);
   db.collection('members').find(person).toArray(function(err, results){
-    if (err){ return console.log()}
+    if (err){ return console.log('DB error - members name')}
     res.json(results);
   });
 });
@@ -68,7 +68,7 @@ router.get('/flight/:flightNumber', function(req, res){
   var flight = { $or: [ { 'outboundFlight.flightNumber': req.params.flightNumber }, { 'returnFlight.flightNumber': req.params.flightNumber } ] };
   console.log('query: ', flight);
   db.collection('members').find(flight).toArray(function(err, results){
-    if (err){ return console.log('DB error') };
+    if (err){ return console.log('DB error - flight number') };
     res.json(results);
   });
 });
