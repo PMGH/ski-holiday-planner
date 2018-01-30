@@ -4,7 +4,9 @@ db.dropDatabase();
 var members = [
   {
     firstName: 'Maureen',
+    firstName_lower: 'maureen',
     secondName: 'McCready',
+    secondName_lower: 'mccready',
     lead: false,
     sport: '',
     outboundFlight: {
@@ -79,7 +81,9 @@ var members = [
   },
   {
     firstName: 'Andrew',
+    firstName_lower: 'andrew',
     secondName: 'McCready',
+    secondName_lower: 'mccready',
     lead: false,
     sport: 'Snowboard',
     paid: true,
