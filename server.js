@@ -30,7 +30,7 @@ MongoClient.connect('mongodb://localhost:27017/ski_hol_planner', function(err, c
   });
 });
 
-// prevent Cross Origin Resource Sharing (CORS) errors, set headeres to allow CORS with middleware
+// prevent Cross Origin Resource Sharing (CORS) errors, set headers to allow CORS with middleware
 app.use(function(req, res, next){
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
