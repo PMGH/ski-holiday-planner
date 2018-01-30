@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import PartyMemberList from './containers/PartyMemberList';
+import Navbar from './navigation/Navbar';
+import Home from './navigation/Home';
+import Members from './navigation/Members';
+import Flights from './navigation/Flights';
+import Transfers from './navigation/Transfers';
+import Accommodation from './navigation/Accommodation';
+import Passes from './navigation/Passes';
+import Equipment from './navigation/Equipment';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = { url: 'http://localhost:3001/api/members', data: [] };
-  }
-
-  componentDidMount(){
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', this.state.url);
-    xhr.addEventListener('load', () => {
-      if (xhr.status === 200){
-        const apiData = JSON.parse(xhr.response);
-        this.setState({ data: apiData });
-        console.log(apiData);
-      }
-    });
-    xhr.send();
-  }
-
   render() {
     return (
-      <section>
-        <PartyMemberList data={ this.state.data } />
-      </section>
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/members" component={Members} />
+          <Route path="/flights" component={Flights} />
+          <Route path="/transfers" component={Transfers} />
+          <Route path="/accommodation" component={Accommodation} />
+          <Route path="/passes" component={Passes} />
+          <Route path="/equipment" component={Equipment} />
+        </React.Fragment>
+      </Router>
     );
   }
 }
